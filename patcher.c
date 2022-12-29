@@ -33,14 +33,19 @@ struct bytes skip_crc_check =  {
     { 0x60, 0x00, 0x00, 0x94 } // bra $e00746
 };
 
-
+struct bytes cpu_blitter_clocks_stay_at_8mhz = {
+	0x00008e, 	// relative to start
+	6,		// 1 byte
+	{ 0x02, 0x38, 0x00, 0xe0, 0x80, 0x07 }	// normally or 25, and e0 instead
+};
 
 struct file ttram_detect_file = {
     0x07AB00,
     "ttramdetect.img"
 };
 
-struct bytes *patchlist[] = { &jump_to_ttram_detect, &skip_crc_check, NULL };
+struct bytes *patchlist[] = { &jump_to_ttram_detect, &skip_crc_check, 
+/*&cpu_blitter_clocks_stay_at_8mhz,*/ NULL };
 struct file *filelist[] = { &ttram_detect_file, NULL };
 
 
