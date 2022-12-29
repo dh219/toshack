@@ -16,7 +16,7 @@ The list of those structs active is then defined (two separate pointer arrays)
 The machine code files are compiled using vasm from source files. Examples are included. The obvious one is the TT-RAM detection routine based on work by Anders Granlund and released under the GPLv2.
 
 ## make
-The build environment is anticipated to be GNU/Linux using Vincent Rivère's packaged Atari-Mint GCC toolkit and the Motorola syntax vasm assembler, although if you have an appropriate gcc and vasmm68k_mot in your path, this should work on any Posix-ish system.
+The build environment is anticipated to be GNU/Linux with gcc and the Motorola syntax vasm assembler, although if you have an appropriate gcc and vasmm68k_mot in your path, this should work on any Posix-ish system.
 
 By default runnning 'make' will build the patcher program and its dependencies and then will run patcher to produce the OUTPUT file from the INPUT file.
 
